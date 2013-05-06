@@ -26,21 +26,21 @@ function getNoticias() {
 						//console.log(itemResult);
 						
 						if(itemResult.Categoria == 1){
-							$("#generales").append('<tr><td style="width:90px;"><a target="_blank" href="'+itemResult.URLVideo + itemResult.Archivo +'"><img src="'+itemResult.URLImagen + itemResult.Imagen +'" alt="'+itemResult.NombreNoticia +'"></a></td><td class="txt"><a target="_blank" href="'+itemResult.URLVideo + itemResult.Archivo +'">'+itemResult.Descripcion +'</a></td></tr>');
+							$("#generales").append('<tr><td style="width:90px;"><a href="'+itemResult.URLVideo + itemResult.Archivo +'"><img src="'+itemResult.URLImagen + itemResult.Imagen +'" alt="'+itemResult.NombreNoticia +'"></a></td><td class="txt"><a href="'+itemResult.URLVideo + itemResult.Archivo +'">'+itemResult.Descripcion +'</a></td></tr>');
 						}
 						
 						if(itemResult.Categoria == 2){
-							$("#deportes").append('<tr><td style="width:90px;"><a target="_blank" href="'+itemResult.URLVideo + itemResult.Archivo +'"><img src="'+itemResult.URLImagen + itemResult.Imagen +'" alt="'+itemResult.NombreNoticia +'"></a></td><td class="txt"><a target="_blank" href="'+itemResult.URLVideo + itemResult.Archivo +'">'+itemResult.Descripcion +'</a></td></tr>');
+							$("#deportes").append('<tr><td style="width:90px;"><a href="'+itemResult.URLVideo + itemResult.Archivo +'"><img src="'+itemResult.URLImagen + itemResult.Imagen +'" alt="'+itemResult.NombreNoticia +'"></a></td><td class="txt"><a href="'+itemResult.URLVideo + itemResult.Archivo +'">'+itemResult.Descripcion +'</a></td></tr>');
 						}
 						
 						if(itemResult.Categoria == 3){
-							$("#espectaculos").append('<tr><td style="width:90px;"><a target="_blank" href="'+itemResult.URLVideo + itemResult.Archivo +'"><img src="'+itemResult.URLImagen + itemResult.Imagen +'" alt="'+itemResult.NombreNoticia +'"></a></td><td class="txt"><a target="_blank" href="'+itemResult.URLVideo + itemResult.Archivo +'">'+itemResult.Descripcion +'</a></td></tr>');
+							$("#espectaculos").append('<tr><td style="width:90px;"><a href="'+itemResult.URLVideo + itemResult.Archivo +'"><img src="'+itemResult.URLImagen + itemResult.Imagen +'" alt="'+itemResult.NombreNoticia +'"></a></td><td class="txt"><a href="'+itemResult.URLVideo + itemResult.Archivo +'">'+itemResult.Descripcion +'</a></td></tr>');
 						}
 						
 						if(itemResult.Categoria == 4 && isDestacado){
 							isDestacado = false;
 							
-							$("#destacado").append('<a target="_blank" href="'+itemResult.URLVideo + itemResult.Archivo +'"><img src="'+itemResult.URLImagen + itemResult.Imagen +'" alt="'+itemResult.NombreNoticia +'"></a><a target="_blank" href="'+itemResult.URLVideo + itemResult.Archivo +'"><span>'+itemResult.Descripcion +'</span></a>');
+							$("#destacado").append('<a href="'+itemResult.URLVideo + itemResult.Archivo +'"><img src="'+itemResult.URLImagen + itemResult.Imagen +'" alt="'+itemResult.NombreNoticia +'"></a><a href="'+itemResult.URLVideo + itemResult.Archivo +'"><span>'+itemResult.Descripcion +'</span></a>');
 							
 							 
 						}
