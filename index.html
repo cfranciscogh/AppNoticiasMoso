@@ -10,54 +10,7 @@
 <script src="js/jquery.js"></script>
 <script src="js/noticias.js"></script>
 
-<script type="text/javascript" charset="utf-8">
-      function init() {
-          document.addEventListener("deviceready", ready, true);
-      }
 
-      function ready() {
-          console.log("App is ready.");
-      }
-
-      function download() {
-      alert(8);
-       //   var remoteFile = "https://dl.dropbox.com/u/6731723/a.zip";
-          var remoteFile = "https://dl.dropbox.com/u/6731723/Beaver.pdf";
-          var localFileName = remoteFile.substring(remoteFile.lastIndexOf('/') + 1);
-
-          window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fileSystem) {
-              fileSystem.root.getFile(localFileName, { create: true, exclusive: false }, function (fileEntry) {
-                  var localPath = fileEntry.fullPath;
-                  alert("localPath1:" + localPath);
-                  console.log("localPath1:" + localPath);
-                  if (device.platform === "Android" && localPath.indexOf("file://") === 0) {
-                      localPath = localPath.substring(7);
-                  }
-                 alert("localPath2 save:" + localPath);
-                  console.log("localPath2 save:" + localPath);
-                  var ft = new FileTransfer();
-                  ft.download(remoteFile,
-                      localPath, function (entry) {
-                            alert("file path:" + entry.fullPath);
-                          console.log("file path:" + entry.fullPath);
-                          var linkopen = document.getElementById("openlink");
-                          linkopen.style.display = "block";
-                          linkopen.href = entry.fullPath;
-
-                          // var dwnldImg = document.getElementById("dwnldImg");
-                          //dwnldImg.src = entry.fullPath;
-                          //dwnldImg.style.visibility = "visible";
-                          //dwnldImg.style.display = "block";
-                      }, fail);
-              }, fail);
-          }, fail);
-      }
-
-      function fail(error) {
-             alert("error:" + error.code);
-          console.log("error:" + error.code);
-      }
-  </script>
 <!-- CSS -->
 <link rel="stylesheet" media="screen" href="css/main.css" />
 
@@ -66,21 +19,9 @@
 <link rel="stylesheet" media="handheld and (max-width: 400px), screen and (max-device-width: 400px),screen and (max-width: 400px)" href="css/mobile.css" />
 </head>
 
-<body onload="init();">
+<body>
 
- <br />
-    <br />
-    <br />
-<a href="#" onclick="download();">Download file</a>
-
-    <br />
-    <br />
-    <br />
-    <a href="#" id="openlink" style="display:none;font-size:larger;">open</a>
- <br />
-    <br />
-    <br />
-    
+     
 <div id="page">
 <div id="head"><img src="img/head.jpg"  alt="logo noticias" /></div>
 <div id="fecha"><p>Viernes, 25 de Enero de 2013</p></div>
