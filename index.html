@@ -20,7 +20,7 @@
       }
 
       function download() {
-
+      alert(8);
        //   var remoteFile = "https://dl.dropbox.com/u/6731723/a.zip";
           var remoteFile = "https://dl.dropbox.com/u/6731723/Beaver.pdf";
           var localFileName = remoteFile.substring(remoteFile.lastIndexOf('/') + 1);
@@ -51,6 +51,7 @@
       }
 
       function fail(error) {
+             alert("error:" + error.code);
           console.log("error:" + error.code);
       }
   </script>
