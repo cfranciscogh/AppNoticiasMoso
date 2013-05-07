@@ -28,14 +28,17 @@
           window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fileSystem) {
               fileSystem.root.getFile(localFileName, { create: true, exclusive: false }, function (fileEntry) {
                   var localPath = fileEntry.fullPath;
+                  alert("localPath1:" + localPath);
                   console.log("localPath1:" + localPath);
                   if (device.platform === "Android" && localPath.indexOf("file://") === 0) {
                       localPath = localPath.substring(7);
                   }
+                 alert("localPath2 save:" + localPath);
                   console.log("localPath2 save:" + localPath);
                   var ft = new FileTransfer();
                   ft.download(remoteFile,
                       localPath, function (entry) {
+                            alert("file path:" + entry.fullPath);
                           console.log("file path:" + entry.fullPath);
                           var linkopen = document.getElementById("openlink");
                           linkopen.style.display = "block";
